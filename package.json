@@ -1,0 +1,26 @@
+{
+  "name": "Typescript-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -W",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diongarman/Sort---TypeScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diongarman/Sort---TypeScript/issues"
+  },
+  "homepage": "https://github.com/Diongarman/Sort---TypeScript#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
