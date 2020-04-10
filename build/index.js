@@ -15,7 +15,7 @@ linkedListCollection.add(1);
 linkedListCollection.add(100);
 linkedListCollection.add(-1);
 linkedListCollection.add(-115);
-linkedListCollection.add(198);
+linkedListCollection.add(197);
 var sorter = new sorter_1.Sorter(linkedListCollection);
 sorter.sort();
 linkedListCollection.print();
