@@ -1,11 +1,15 @@
+import { Sorter } from './sorter';
+
 class Node {
   next: Node | null = null;
   constructor(public data: number) {}
 }
 
-export class LinkedList {
+export class LinkedList extends Sorter {
   head: Node | null = null;
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   add(data: number): void {
     const node = new Node(data);
@@ -56,7 +60,7 @@ export class LinkedList {
     throw new Error('Index out of bounds');
   }
 
-  compare(leftIndex: number, rightIndex): boolean {
+  compare(leftIndex: number, rightIndex: number): boolean {
     if (!this.head) {
       throw new Error('List is empty');
     }

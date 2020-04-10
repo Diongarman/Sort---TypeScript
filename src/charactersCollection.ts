@@ -1,5 +1,9 @@
-export class CharactersCollection {
-  constructor(public data: string) {}
+import { Sorter } from './sorter';
+
+export class CharactersCollection extends Sorter {
+  constructor(public data: string) {
+    super();
+  }
 
   //arguments are verbose to demonstrate semantics more clearly
   compare(leftIndex: number, rightIndex: number): boolean {
