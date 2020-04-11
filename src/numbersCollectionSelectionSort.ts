@@ -1,18 +1,17 @@
 import { SelectionSort } from './SelectionSorter';
 
 export class NumbersCollection extends SelectionSort {
-  private indexMin: number = 0;
   constructor(public data: number[]) {
     super();
   }
 
-  compareToCurrMin(leftIndex: number): boolean {
-    return this.data[leftIndex] < this.data[this.indexOfMin];
+  compare(leftIndex: number, indexOfMin: number): boolean {
+    return this.data[leftIndex] < this.data[indexOfMin];
   }
 
-  swapWithCurrMin(iterator: number): void {
-    let temp = this.data[this.indexOfMin];
-    this.data[this.indexOfMin] = this.data[iterator];
+  swap(iterator: number, indexOfMin: number): void {
+    let temp = this.data[indexOfMin];
+    this.data[indexOfMin] = this.data[iterator];
     this.data[iterator] = temp;
   }
 
@@ -21,15 +20,7 @@ export class NumbersCollection extends SelectionSort {
     return this.data.length;
   }
 
-  get indexOfMin(): number {
-    return this.indexMin;
-  }
-
-  set indexOfMin(index: number) {
-    this.indexMin = index;
-  }
-
-  equalToCurrMin(iterator: number) {
-    return this.data[iterator] === this.data[this.indexOfMin];
+  equal(iterator: number, indexOfMin: number) {
+    return this.data[iterator] === this.data[indexOfMin];
   }
 }

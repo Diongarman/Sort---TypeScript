@@ -5,18 +5,20 @@ var SelectionSort = /** @class */ (function () {
     }
     SelectionSort.prototype.sort = function () {
         var length = this.length;
+        var indexOfMin;
         for (var i = 0; i < length; i++) {
-            this.indexOfMin = i;
+            indexOfMin = i;
             for (var j = i + 1; j < length; j++) {
-                if (this.compareToCurrMin(j)) {
-                    this.indexOfMin = j;
+                if (this.compare(j, indexOfMin)) {
+                    indexOfMin = j;
                 }
             }
-            if (!this.equalToCurrMin(i)) {
-                this.swapWithCurrMin(i);
+            if (!this.equal(i, indexOfMin)) {
+                this.swap(i, indexOfMin);
             }
         }
     };
     return SelectionSort;
 }());
 exports.SelectionSort = SelectionSort;
+//clean up index of min, don't need to use setters in numCollection.ts

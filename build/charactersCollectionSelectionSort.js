@@ -14,22 +14,25 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var SelectionSorter_1 = require("./SelectionSorter");
-var NumbersCollection = /** @class */ (function (_super) {
-    __extends(NumbersCollection, _super);
-    function NumbersCollection(data) {
+var CharactersCollection = /** @class */ (function (_super) {
+    __extends(CharactersCollection, _super);
+    function CharactersCollection(data) {
         var _this = _super.call(this) || this;
         _this.data = data;
         return _this;
     }
-    NumbersCollection.prototype.compare = function (leftIndex, indexOfMin) {
-        return this.data[leftIndex] < this.data[indexOfMin];
+    //arguments are verbose to demonstrate semantics more clearly
+    CharactersCollection.prototype.compare = function (leftIndex, indexOfMin) {
+        return (this.data[leftIndex].toLowerCase() < this.data[indexOfMin].toLowerCase());
     };
-    NumbersCollection.prototype.swap = function (iterator, indexOfMin) {
-        var temp = this.data[indexOfMin];
-        this.data[indexOfMin] = this.data[iterator];
-        this.data[iterator] = temp;
+    CharactersCollection.prototype.swap = function (leftIndex, indexOfMin) {
+        var characters = this.data.split('');
+        var leftMostValue = characters[leftIndex];
+        characters[leftIndex] = characters[indexOfMin];
+        characters[indexOfMin] = leftMostValue;
+        this.data = characters.join('');
     };
-    Object.defineProperty(NumbersCollection.prototype, "length", {
+    Object.defineProperty(CharactersCollection.prototype, "length", {
         //allows length to be accessed as an attribute e.g. collection.length
         get: function () {
             return this.data.length;
@@ -37,9 +40,9 @@ var NumbersCollection = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
-    NumbersCollection.prototype.equal = function (iterator, indexOfMin) {
-        return this.data[iterator] === this.data[indexOfMin];
+    CharactersCollection.prototype.equal = function (iterator, indexOfMin) {
+        return (this.data[iterator].toLowerCase() === this.data[indexOfMin].toLowerCase());
     };
-    return NumbersCollection;
+    return CharactersCollection;
 }(SelectionSorter_1.SelectionSort));
-exports.NumbersCollection = NumbersCollection;
+exports.CharactersCollection = CharactersCollection;

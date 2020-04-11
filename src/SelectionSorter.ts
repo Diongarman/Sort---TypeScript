@@ -1,22 +1,24 @@
 export abstract class SelectionSort {
   abstract length: number;
-  abstract indexOfMin: number;
-  abstract compareToCurrMin(leftIndex: number): boolean;
-  abstract equalToCurrMin(iterator: number): boolean;
-  abstract swapWithCurrMin(iterator: number): void;
+  abstract compare(leftIndex: number, indexOfMin: number): boolean;
+  abstract equal(iterator: number, indexOfMin: number): boolean;
+  abstract swap(iterator: number, indexOfMin: number): void;
   sort(): void {
     const { length } = this;
+    let indexOfMin;
     for (let i = 0; i < length; i++) {
-      this.indexOfMin = i;
+      indexOfMin = i;
 
       for (let j = i + 1; j < length; j++) {
-        if (this.compareToCurrMin(j)) {
-          this.indexOfMin = j;
+        if (this.compare(j, indexOfMin)) {
+          indexOfMin = j;
         }
       }
-      if (!this.equalToCurrMin(i)) {
-        this.swapWithCurrMin(i);
+      if (!this.equal(i, indexOfMin)) {
+        this.swap(i, indexOfMin);
       }
     }
   }
 }
+
+//clean up index of min, don't need to use setters in numCollection.ts
