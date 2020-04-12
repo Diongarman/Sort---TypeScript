@@ -5,13 +5,14 @@ import { NumbersCollection } from './numbersCollectionSelectionSort';
 //import { CharactersCollection } from './charactersCollection';
 import { CharactersCollection } from './charactersCollectionSelectionSort';
 
-import { LinkedList } from './LinkedList';
+// import { LinkedList } from './LinkedList';
+import { LinkedList } from './LinkedListSelectionSort';
 
-const charactersCollection = new CharactersCollection(
-  'pOPThesEGuYsLikeAWheeLiE'
-);
-charactersCollection.sort();
-console.log(charactersCollection.data);
+// const charactersCollection = new CharactersCollection(
+//   'pOPThesEGuYsLikeAWheeLiE'
+// );
+// charactersCollection.sort();
+// console.log(charactersCollection.data);
 
 // const numbersCollection = new NumbersCollection([-999, 101, 18, 76, 0, 69]);
 // numbersCollection.sort();
@@ -26,12 +27,12 @@ console.log(charactersCollection.data);
 // charactersCollection.sort();
 // console.log(charactersCollection.data);
 
-// const linkedListCollection = new LinkedList();
-// linkedListCollection.add(1);
-// linkedListCollection.add(100);
-// linkedListCollection.add(-1);
-// linkedListCollection.add(-115);
-// linkedListCollection.add(197);
+const linkedListCollection = new LinkedList();
+linkedListCollection.add(1);
+linkedListCollection.add(105);
+linkedListCollection.add(-1);
+linkedListCollection.add(-115);
+linkedListCollection.add(297);
 
-// linkedListCollection.sort();
-// linkedListCollection.print();
+linkedListCollection.sort();
+linkedListCollection.print();

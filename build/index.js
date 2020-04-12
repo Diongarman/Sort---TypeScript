@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//import { CharactersCollection } from './charactersCollection';
-var charactersCollectionSelectionSort_1 = require("./charactersCollectionSelectionSort");
-var charactersCollection = new charactersCollectionSelectionSort_1.CharactersCollection('pOPThesEGuYsLikeAWheeLiE');
-charactersCollection.sort();
-console.log(charactersCollection.data);
+// import { LinkedList } from './LinkedList';
+var LinkedListSelectionSort_1 = require("./LinkedListSelectionSort");
+// const charactersCollection = new CharactersCollection(
+//   'pOPThesEGuYsLikeAWheeLiE'
+// );
+// charactersCollection.sort();
+// console.log(charactersCollection.data);
 // const numbersCollection = new NumbersCollection([-999, 101, 18, 76, 0, 69]);
 // numbersCollection.sort();
 // console.log(numbersCollection.data);
@@ -14,11 +16,11 @@ console.log(charactersCollection.data);
 // const charactersCollection = new CharactersCollection('BahfulaHLGnhaa');
 // charactersCollection.sort();
 // console.log(charactersCollection.data);
-// const linkedListCollection = new LinkedList();
-// linkedListCollection.add(1);
-// linkedListCollection.add(100);
-// linkedListCollection.add(-1);
-// linkedListCollection.add(-115);
-// linkedListCollection.add(197);
-// linkedListCollection.sort();
-// linkedListCollection.print();
+var linkedListCollection = new LinkedListSelectionSort_1.LinkedList();
+linkedListCollection.add(1);
+linkedListCollection.add(105);
+linkedListCollection.add(-1);
+linkedListCollection.add(-115);
+linkedListCollection.add(297);
+linkedListCollection.sort();
+linkedListCollection.print();

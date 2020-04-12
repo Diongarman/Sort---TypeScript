@@ -1,11 +1,11 @@
-import { Sorter } from './sorter';
+import { SelectionSort } from './SelectionSorter';
 
 class Node {
   next: Node | null = null;
   constructor(public data: number) {}
 }
 
-export class LinkedList extends Sorter {
+export class LinkedList extends SelectionSort {
   head: Node | null = null;
   constructor() {
     super();
@@ -65,7 +65,7 @@ export class LinkedList extends Sorter {
       throw new Error('List is empty');
     }
 
-    return this.at(leftIndex).data > this.at(rightIndex).data;
+    return this.at(leftIndex).data < this.at(rightIndex).data;
   }
 
   swap(leftIndex: number, rightIndex: number): void {
@@ -91,5 +91,9 @@ export class LinkedList extends Sorter {
       console.log(node.data);
       node = node.next;
     }
+  }
+
+  equal(iterator: number, indexOfMin: number) {
+    return this.at(iterator).data === this.at(indexOfMin).data;
   }
 }
