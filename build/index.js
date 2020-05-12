@@ -22,5 +22,6 @@ linkedListCollection.add(105);
 linkedListCollection.add(-1);
 linkedListCollection.add(-115);
 linkedListCollection.add(297);
+linkedListCollection.add(154);
 linkedListCollection.sort();
 linkedListCollection.print();

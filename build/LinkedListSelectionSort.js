@@ -43,7 +43,6 @@ var LinkedList = /** @class */ (function (_super) {
     Object.defineProperty(LinkedList.prototype, "length", {
         get: function () {
             if (!this.head) {
-                this.head = node;
                 return 0;
             }
             var i = 1;

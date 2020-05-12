@@ -29,7 +29,6 @@ export class LinkedList extends SelectionSort {
 
   get length(): number {
     if (!this.head) {
-      this.head = node;
       return 0;
     }
 
@@ -86,7 +85,7 @@ export class LinkedList extends SelectionSort {
       throw new Error('List is empty');
     }
 
-    let node = this.head;
+    let node: Node | null = this.head;
     while (node) {
       console.log(node.data);
       node = node.next;
